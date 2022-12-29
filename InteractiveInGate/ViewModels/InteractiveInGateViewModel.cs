@@ -1,12 +1,232 @@
-﻿using System;
+﻿using rfid;
+using Synchronize;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using Process;
+using rfid;
+using Synchronize;
+using InteractiveInGate.Utils;
 
 namespace InteractiveInGate.ViewModels
 {
-    internal class InteractiveInGateViewModel
+
+    internal enum ConnectionStatus
     {
+        Online,
+        OfflineMode,
+        CriticalError
+    }
+
+    internal class Item : IComparable<Item>
+    {
+        internal const string UnknownText = "Unknown items found";
+        public Item(SkuGroupItem g)
+        {
+            var texts = g.text.Split('\t');
+            Description = texts[0];
+            Amount = g.CounterValue();
+        }
+
+        public string Description { get; }
+        public int Amount { get; }
+
+        public int CompareTo(Item other)
+        {
+            if (Description == UnknownText) return 1; // Unknown always goes to the end
+            if (other.Description == UnknownText) return -1;
+            return Description.CompareTo(other.Description); // Sort by description first
+        }
+    }
+
+
+    internal partial class InteractiveInGateViewModel : INotifyPropertyChanged
+    {
+        private static readonly string CriticalError = Application.Current.FindResource("CriticalError") as string;
+        private static readonly string OfflineMode = Application.Current.FindResource("OfflineMode") as string;
+
+
+        private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        private SelfDiagnosticts selfDg;    // RAD-1206
+
+        private int inventoryCount;
+        private string errorString;
+        private Executor executor;
+        private CancellationTokenSource cts;
+        private volatile TaskCompletionSource<byte> CancellingProgress;
+
+        private LocationNode currentLocation;
+        public LocationNode CurrentLocation
+        {
+            get => currentLocation;
+            private set
+            {
+                currentLocation = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CurrentLocation"));
+            }
+        }
+        private string currentLocationName;
+        public string CurrentLocationName
+        {
+            get => currentLocationName;
+            set
+            {
+                currentLocationName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("CurrentLocationName"));
+            }
+        }
+
+        internal readonly Gate process;
+
+        public BulkObservableCollection<Item> Items { get; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        internal void Cancel()
+        {
+            if (CancellingProgress != null)
+                throw new InvalidOperationException("Can't cancel progress multiple times");
+            CancellingProgress = new TaskCompletionSource<byte>();
+            cts.Cancel();
+        }
+
+        internal async Task WaitCancelAsync()
+        {
+            await CancellingProgress.Task;
+            CancellingProgress = null;
+        }
+
+        public DateTime? SelectedDate { get; set; }
+        private string dateText;
+        public string DateText
+        {
+            get => dateText;
+            set
+            {
+                dateText = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DateText"));
+            }
+        }
+
+        public int ItemsTotalCount { get => Items.Sum(i => i.Amount); }
+
+        public string ErrorString
+        {
+            get => errorString;
+            private set
+            {
+                if (errorString == value)
+                    return;
+                errorString = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ErrorString"));
+            }
+        }
+
+        public InteractiveInGateViewModel(SelfDiagnosticts selfDiagnosticts)
+        {
+            var localization = Thread.CurrentThread.CurrentCulture.Name;
+            selfDg = selfDiagnosticts;
+
+            Items = new BulkObservableCollection<Item>();
+
+            executor = Executor.FromConfig(App.Configuration.Executor);
+            process = executor.Process.First(p => p is Gate) as Gate;
+
+            Task.Run(async () => // Poll offline status every minute
+            {
+                while (true)
+                {
+                    await Task.Delay(TimeSpan.FromMinutes(1));
+                    ErrorString = process.IsOffline ? OfflineMode : null;
+                }
+            });
+        }
+
+        public int InventoryCount
+        {
+            get => inventoryCount;
+            private set
+            {
+                if (inventoryCount != value)
+                {
+                    inventoryCount = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("InventoryCount"));
+                }
+            }
+        }
+
+        private void CountUpdated(int c, Gate.ScanState s)
+        {
+            InventoryCount = c;
+            if (s == Gate.ScanState.RADEA_COMMUNICATION)
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ProgressRadea"));
+        }
+
+        public async Task StartAsync(LocationNode location, string name, bool bundleInBackground = false)
+        {
+            CurrentLocationName = name;
+            CurrentLocation = location;
+            InventoryCount = 0;
+            rfidEntryList tags = null;
+            cts = new CancellationTokenSource();
+            string delivery_date = null;
+            if (SelectedDate != null)
+            {
+                DateTime utc = new DateTime(SelectedDate.Value.Year, SelectedDate.Value.Month, SelectedDate.Value.Day, 0, 0, 0, DateTimeKind.Utc);
+                delivery_date = string.Format("{0:O}", utc);
+            }
+            try
+            {
+                if (InteractiveInGate.App.Configuration.StreamInventory)
+                    tags = await process.StartStreamAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid, delivery_date, bundleInBackground); // Start scan and update inventory count
+                else
+                    tags = await process.StartAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid, delivery_date, bundleInBackground); // Start scan and update inventory count
+            }
+            catch (System.OperationCanceledException)
+            {
+                logger.Info(() => "Tags scanning cancelled");
+                CancellingProgress.TrySetResult(1);
+                return;
+            }
+            catch (Exception ex)
+            {
+                logger.Info(() => $"Unknown exception {ex} during scan");
+                if (CancellingProgress != null)
+                    CancellingProgress.TrySetResult(1);
+                return;
+            }
+            finally
+            {
+                NLog.LogManager.Flush();
+            }
+
+            logger.Debug("Got " + tags.ItemStorage.Count + " tags from readout.");
+
+            SkuGroupReport report = new SkuGroupReport(App.Configuration.Report.Grouping, App.Configuration.Report.Reporting) { NullSkuText = Item.UnknownText };
+            foreach (var epc in tags?.ItemStorage?.Keys?.Select(tag => tag.ToString()))
+            {
+                process.EpcToSku(epc, out Sku sku, out _);
+                report.Update(sku, epc);
+            }
+            var items = new List<Item>();
+            report.ForEach(g => items.Add(new Item(g)));
+            items.Sort();
+            Items.BeginBulkOperation();
+            Items.Clear();
+            items.ForEach(i => Items.Add(i));
+            Items.EndBulkOperation();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemsTotalCount"));
+
+            logger.Debug("Items after StartAsync: ");
+            foreach (Item item in Items)
+            {
+                logger.Debug(item.Description + ": " + item.Amount);
+            }
+        }
     }
 }
