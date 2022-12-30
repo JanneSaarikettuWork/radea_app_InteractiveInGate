@@ -26,7 +26,12 @@
     WindowState="Maximized"
     WindowStyle="None"
     -->
-    
+
+    <Window.Resources>
+        <rgvm:StateToColorConverter x:Key="StateToColorConverter"/>
+        <rgvm:StateToTooltipConverter x:Key="StateToTooltipConverter"/>
+    </Window.Resources>
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -43,7 +48,23 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-
+            <DockPanel
+            Grid.Row="0"
+            Grid.ColumnSpan="2">
+                <Image
+                Margin="4px"
+                DockPanel.Dock="Left"
+                x:Name="Logo"
+                Stretch="Uniform"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                MouseDown="Logo_Click"/>
+            </DockPanel>
+            <Viewbox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" >
+                <TextBlock Background="{StaticResource InteractiveInGateBlue}" Foreground="White" Text="{Binding ErrorString}"/>
+            </Viewbox>
+            <Frame x:Name="RootFrame" Grid.Row="1" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden" LoadCompleted="Frame_LoadCompleted" DataContextChanged="Frame_DataContextChanged"/>
         </Grid>
 
         <Grid Grid.Row="1">

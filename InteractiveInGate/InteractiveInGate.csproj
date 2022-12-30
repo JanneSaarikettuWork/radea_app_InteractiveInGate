@@ -147,6 +147,7 @@
     <Compile Include="Models\SimpleLocation.cs" />
     <Compile Include="ResourceDictionaryLocator.cs" />
     <Compile Include="SelfDiagnostics.cs" />
+    <Compile Include="SingletonNavigator.cs" />
     <Compile Include="Utils\BulkObservableCollection.cs" />
     <Compile Include="ViewModels\InteractiveInGateViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
@@ -171,7 +172,11 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Resource Include="Assets\Nordic_ID.jpg" />
+    <Resource Include="Assets\Nordic_ID2.png" />
+    <Resource Include="Assets\SWicon2-32px.ico" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

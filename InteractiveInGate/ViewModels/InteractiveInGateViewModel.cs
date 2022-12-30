@@ -9,8 +9,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Process;
-using rfid;
-using Synchronize;
 using InteractiveInGate.Utils;
 
 namespace InteractiveInGate.ViewModels

@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
+using NLog.Fluent;
 
 namespace InteractiveInGate.Views
 {
@@ -24,39 +24,82 @@ namespace InteractiveInGate.Views
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private SelfDiagnosticts selfDiagnosticts;
+        public SingletonNavigator Navigator { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Logo_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                WindowStyle = WindowStyle == WindowStyle.None ? WindowStyle.SingleBorderWindow : WindowStyle.None; // toggle showing/hiding minimize/maximize window buttons
+                WindowState = WindowState.Maximized;
+                // TODO Kokeillaas taas toimisiko tämä nyt uudessa MahApp kirjastossa
+                this.ShowModalMessageExternal("Version", ((App)Application.Current).GetInfo());
+                // MessageBox.Show(((App)Application.Current).GetInfo(), " Version ", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             InteractiveInGateViewModel gate;
 
-            //try
-            //{
-            //    selfDiagnosticts = new SelfDiagnosticts();
-            //    gate = new RouterGateViewModel(selfDiagnosticts);
-            //}
-            //catch (Exception ex)
-            //{
-            //    NLog.LogManager.GetCurrentClassLogger().Error(ex);
-            //    this.ShowModalMessageExternal(Application.Current.FindResource("CriticalError") as string, ex.Message);
-            //    NLog.LogManager.Shutdown();
-            //    Application.Current.Shutdown();
-            //    return;
-            //}
+            try
+            {
+                selfDiagnosticts = new SelfDiagnosticts();
+                gate = new InteractiveInGateViewModel(selfDiagnosticts);
+            }
+            catch (Exception ex)
+            {
+                NLog.LogManager.GetCurrentClassLogger().Error(ex);
+                this.ShowModalMessageExternal(Application.Current.FindResource("CriticalError") as string, ex.Message);
+                NLog.LogManager.Shutdown();
+                Application.Current.Shutdown();
+                return;
+            }
 
-            //DataContext = gate;
+            DataContext = gate;
 
-            //Navigator = new SingletonNavigator(RootFrame);
-            //Navigator.Navigate(SingletonNavigator.PageView.Start);
-            //Logo.Source = new BitmapImage(new Uri("../Assets/Comforta RGB.png", UriKind.RelativeOrAbsolute));
 
-            //gate.RegisterReader();
-            //selfDiagnosticts.Start(gate);
+            Navigator = new SingletonNavigator(RootFrame);
+            Navigator.Navigate(SingletonNavigator.PageView.Start);
+            Logo.Source = new BitmapImage(new Uri("../Assets/Nordic_ID2.png", UriKind.RelativeOrAbsolute));
+
+            gate.RegisterReader();
+            selfDiagnosticts.Start(gate);
         }
 
+        private void Frame_LoadCompleted(object sender, NavigationEventArgs e)
+        {
+            UpdateFrameDataContext();
+        }
+
+        private void Frame_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            UpdateFrameDataContext();
+        }
+
+        private void UpdateFrameDataContext()
+        {
+            if (RootFrame.Content is FrameworkElement content)
+                content.DataContext = RootFrame.DataContext;
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            NLog.LogManager.Shutdown();
+            Application.Current.Shutdown();
+        }
+
+        public int LookupSize
+        {
+            get { return (DataContext != null ? ((InteractiveInGateViewModel)DataContext).LookupSize : 0); }
+        }
 
     }
 }

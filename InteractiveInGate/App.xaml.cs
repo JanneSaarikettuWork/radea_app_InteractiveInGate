@@ -4,7 +4,6 @@ using MahApps.Metro.Controls;
 using System;
 
 using InteractiveInGate.Models.Json;
-using InteractiveInGate.Views;
 
 using System.ComponentModel;
 using System.Deployment.Application;
@@ -57,7 +56,7 @@ namespace InteractiveInGate
         [STAThread]
         static void Main()
         {
-            new SplashScreen("Assets/Comforta RGB.jpg").Show(true);
+            new SplashScreen("Assets/Nordic_ID.jpg").Show(true);
             try
             {
                 mutex.WaitOne(TimeSpan.Zero, true);

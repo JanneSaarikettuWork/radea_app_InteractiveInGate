@@ -152,6 +152,10 @@ namespace InteractiveInGate.ViewModels
             }
         }
 
+        public int LookupSize
+        {
+            get { return (process != null ? process.LookupSize : 0); }
+        }
 
         /// <summary>
         /// Check and return diagnostics state of the application

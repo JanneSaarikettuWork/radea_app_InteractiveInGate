@@ -4,9 +4,43 @@
              xmlns:local="clr-namespace:InteractiveInGate"
              ShutdownMode="OnExplicitShutdown"
              Exit="Application_Exit">
-<!--              StartupUri="Views\MainWindow.xaml" -->
-    
+   
     <Application.Resources>
-         
+        <ResourceDictionary 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib">
+            <SolidColorBrush x:Key="InteractiveInGateCancel"           Color="#FFFF3300"/>
+            <SolidColorBrush x:Key="InteractiveInGateClickedBackround" Color="#FF0066FF"/>
+            <SolidColorBrush x:Key="InteractiveInGateBlue"             Color="#FF0099FF"/>
+            <SolidColorBrush x:Key="InteractiveInGatePropertyChanged"  Color="#FF0094B3"/>
+            <SolidColorBrush x:Key="StateUnknown"  Color="LightGray"/>
+            <SolidColorBrush x:Key="StateOk"       Color="LightGreen"/>
+            <SolidColorBrush x:Key="StateWarning"  Color="#FFFFFFA0"/>
+            <SolidColorBrush x:Key="StateError"    Color="Tomato"/>
+            <ResourceDictionary.MergedDictionaries>
+                <!--
+                <ResourceDictionary Source="pack://application:,,,/Languages/en-US.xaml"/>
+                -->
+
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive!
+                
+                    See notes about theming in https://mahapps.com/docs/guides/migration-to-v2.0
+
+                -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!-- 
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                -->
+                <!-- Accent and AppTheme setting 
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" /> 
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
