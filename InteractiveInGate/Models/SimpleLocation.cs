@@ -12,19 +12,31 @@ namespace InteractiveInGate.Models
         private LocationNode mLocationNode;
         private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private const int MAXIMUM_HIERARCHY_DEPTH = 100;
-        public string InteractiveInGateMetaKey { get; set; } = "InteractiveInGateDestination";
+        
+        // TODO "laundry_site_slug": "true" used at Medanta (slug?.. what is the meaning of the word in this context?)
+        // public string CustomerLocationMetaKey { get; set; } = "laundry_site_slug";
+        public string CustomerLocationMetaKey { get; set; } = "RouterGateDestination";
+        public string RouterNameMetaKey { get; set; } = "RouterName"; // TODO: muuta tämä
 
         public List<SimpleLocation> Children { get; set; }
         public bool IsLeafNode { get; private set; }
-        public bool IsInteractiveInGateDestination { get; private set; }
+        public bool IsInteractiveInGateSource { get; private set; }
         public string Name { get; private set; }
 
         public SimpleLocation(LocationNode node, int recursionDepth = 1)
         {
             mLocationNode = node;
             Name = mLocationNode.Name;
+            IsInteractiveInGateSource = false;
 
-            IsInteractiveInGateDestination = (mLocationNode.Metadata.ContainsKey(InteractiveInGateMetaKey) && mLocationNode.Metadata[InteractiveInGateMetaKey].ToLower() == "true");
+            if (null != mLocationNode.Metadata)
+            {
+                if (mLocationNode.Metadata.ContainsKey(RouterNameMetaKey))
+                    Name = mLocationNode.Metadata[RouterNameMetaKey];
+                if (mLocationNode.Metadata.ContainsKey(CustomerLocationMetaKey) && mLocationNode.Metadata[CustomerLocationMetaKey].ToLower() == "true")
+                    IsInteractiveInGateSource = true;
+            }
+            
 
             Children = new List<SimpleLocation>();
             if (recursionDepth < MAXIMUM_HIERARCHY_DEPTH)
@@ -40,7 +52,7 @@ namespace InteractiveInGate.Models
                 logger.Info("Please check the Radea location structure, there's probably a cyclic inheritance chain.");
             }
 
-            // Map each child to the nearest non-empty generation of InteractiveInGate targets
+            // Map each child to the nearest non-empty generation of InteractiveInGate sources
             List<SimpleLocation> addedChildren = new List<SimpleLocation>();
             List<SimpleLocation> removedChildren = new List<SimpleLocation>();
             ResolveGateLocationChildren(Children, ref addedChildren, ref removedChildren);
@@ -70,7 +82,7 @@ namespace InteractiveInGate.Models
         public string Describe(int hierarchyDepth = 0)
         {
             string indentation = new string(' ', 2*hierarchyDepth);
-            string description = indentation + $"Location {mLocationNode.Name} has {Children.Count} children. Is RGD? {IsInteractiveInGateDestination}" + Environment.NewLine;
+            string description = indentation + $"Location {mLocationNode.Name} has {Children.Count} children. Is RGD? {IsInteractiveInGateSource}" + Environment.NewLine;
 
             foreach (SimpleLocation child in Children)
             {
@@ -104,7 +116,7 @@ namespace InteractiveInGate.Models
         {
             foreach (SimpleLocation child in inputChildren)
             {
-                if (child.IsInteractiveInGateDestination)
+                if (child.IsInteractiveInGateSource)
                 {
                     addedChildren.Add(child);
                 }

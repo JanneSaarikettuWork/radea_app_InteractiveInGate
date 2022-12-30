@@ -23,14 +23,8 @@ namespace InteractiveInGate.Models.Json
         [JsonProperty("TagsWaitTimeout", Required = Required.Always)]
         public long TagsWaitTimeout { get; set; }
 
-        [JsonProperty("SelfUpdateTimeout", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
-        public long SelfUpdateTimeout { get; set; }
-
         [JsonProperty("Report", Required = Required.Always)]
         public Report Report { get; set; }
-
-        [JsonProperty("MasterData", Required = Required.Always)]
-        public MasterData MasterData { get; set; }
 
         [JsonProperty("executor", Required = Required.Always)]
         public Process.Json.Config Executor { get; set; }
@@ -40,12 +34,6 @@ namespace InteractiveInGate.Models.Json
 
         [JsonProperty("ColorScheme", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public ColorScheme ColorScheme { get; set; }
-    }
-
-    public partial class MasterData
-    {
-        [JsonProperty("CacheTimeout")]
-        public long CacheTimeout { get; set; }
     }
 
     public partial class Report

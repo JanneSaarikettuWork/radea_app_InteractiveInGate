@@ -168,8 +168,20 @@ namespace InteractiveInGate.ViewModels
                 // Utilized the logic (..not the most clear) allready implemented in the Process/Gate  
                 int state = process.IsOffline ? DiagnostictsState.StateError : DiagnostictsState.StateOk;
 
+                // JSa TTR - better application diagnostics (RADEA-1650)
+                if (process.RadeaLookup)
+                {
+                    if (DiagnostictsState.StateError != state)
+                    {
+                        if (LookupSize <= 0)
+                            state = DiagnostictsState.StateWarning;
+                    }
+                }
+
                 if (state == DiagnostictsState.StateError)
-                    selfDg.application.additionalInfoString = ErrorString;
+                    selfDg.application.additionalInfoString = String.IsNullOrEmpty(ErrorString) ? "Process is offline" : ErrorString;
+                else if (state == DiagnostictsState.StateWarning)
+                    selfDg.application.additionalInfoString = $"Epc-sku lookup table size is {process.LookupSize}";
                 else
                     selfDg.application.additionalInfoString = "";
 

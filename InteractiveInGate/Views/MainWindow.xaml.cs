@@ -1,5 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+using InteractiveInGate.Properties;
 using InteractiveInGate.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using NLog.Fluent;
 
 namespace InteractiveInGate.Views
@@ -30,6 +32,11 @@ namespace InteractiveInGate.Views
         public MainWindow()
         {
             InitializeComponent();
+#if DEBUG
+            Topmost = false;
+            WindowStyle = WindowStyle.SingleBorderWindow;
+            WindowState = WindowState.Normal;
+#endif
         }
 
         private void Logo_Click(object sender, MouseButtonEventArgs e)

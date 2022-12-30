@@ -1,6 +1,4 @@
-﻿using rfid;
-using Synchronize;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,6 +7,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Process;
+using rfid;
+using Synchronize;
 using InteractiveInGate.Utils;
 
 namespace InteractiveInGate.ViewModels
@@ -26,8 +26,9 @@ namespace InteractiveInGate.ViewModels
         internal const string UnknownText = "Unknown items found";
         public Item(SkuGroupItem g)
         {
-            var texts = g.text.Split('\t');
-            Description = texts[0];
+            // JSa TTR 7.4.2022 include all that is included in App.Configuration.Report.Reporting (not only the 1st item)
+            // TODO check this out
+            Description = g.text;
             Amount = g.CounterValue();
         }
 
@@ -99,17 +100,6 @@ namespace InteractiveInGate.ViewModels
             CancellingProgress = null;
         }
 
-        public DateTime? SelectedDate { get; set; }
-        private string dateText;
-        public string DateText
-        {
-            get => dateText;
-            set
-            {
-                dateText = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("DateText"));
-            }
-        }
 
         public int ItemsTotalCount { get => Items.Sum(i => i.Amount); }
 
@@ -134,6 +124,10 @@ namespace InteractiveInGate.ViewModels
 
             executor = Executor.FromConfig(App.Configuration.Executor);
             process = executor.Process.First(p => p is Gate) as Gate;
+
+            // Tell process that we are running a Track and Trace gate - in contrast to RouterGate
+            process.IsTtrGate = true;
+            // TODO: Tell process that we are running a IIG - in contrast to RouterGate or Track and Trace gate 
 
             Task.Run(async () => // Poll offline status every minute
             {
@@ -165,25 +159,19 @@ namespace InteractiveInGate.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ProgressRadea"));
         }
 
-        public async Task StartAsync(LocationNode location, string name, bool bundleInBackground = false)
+        public async Task StartAsync(LocationNode location, string name)
         {
             CurrentLocationName = name;
             CurrentLocation = location;
             InventoryCount = 0;
             rfidEntryList tags = null;
             cts = new CancellationTokenSource();
-            string delivery_date = null;
-            if (SelectedDate != null)
-            {
-                DateTime utc = new DateTime(SelectedDate.Value.Year, SelectedDate.Value.Month, SelectedDate.Value.Day, 0, 0, 0, DateTimeKind.Utc);
-                delivery_date = string.Format("{0:O}", utc);
-            }
             try
             {
                 if (InteractiveInGate.App.Configuration.StreamInventory)
-                    tags = await process.StartStreamAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid, delivery_date, bundleInBackground); // Start scan and update inventory count
+                    tags = await process.StartStreamAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid); // Start scan and update inventory count
                 else
-                    tags = await process.StartAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid, delivery_date, bundleInBackground); // Start scan and update inventory count
+                    tags = await process.StartAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid); // Start scan and update inventory count
             }
             catch (System.OperationCanceledException)
             {

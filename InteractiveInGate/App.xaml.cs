@@ -1,25 +1,24 @@
-﻿using InteractiveInGate.Properties;
+﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using InteractiveInGate.Properties;
 using InteractiveInGate.Views;
-using MahApps.Metro.Controls;
 using System;
-
-using InteractiveInGate.Models.Json;
-
-using System.ComponentModel;
 using System.Deployment.Application;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using MahApps.Metro.Controls.Dialogs;
+
+using InteractiveInGate.Models.Json;
+using System.ComponentModel;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Threading.Tasks;
 
 namespace InteractiveInGate
 {
@@ -27,7 +26,6 @@ namespace InteractiveInGate
     {
         public static NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         private static Mutex mutex = new Mutex(false, "{E45C634B-D90E-44D2-90D5-B28905F191B6}");
-        private Timer updateTimer;
 
         private string conf = null;
 
@@ -98,14 +96,13 @@ namespace InteractiveInGate
                 version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             }
 
-            var process = System.Diagnostics.Process.GetCurrentProcess();
+            var proc = System.Diagnostics.Process.GetCurrentProcess();
             return new StringBuilder()
-                .AppendFormat("\nName:\t\t{0}\n", process.ProcessName)
+                .AppendFormat("\nName:\t\t{0}\n", proc.ProcessName)
                 .AppendFormat("Configuration:\t{0}\n", Path.GetFullPath(conf))
                 .AppendFormat("Version:\t\t{0}\n", version)
-                .AppendFormat("Started:\t\t{0}\n", process.StartTime)
-                .AppendFormat("Uptime:\t\t{0}\n", DateTime.UtcNow - process.StartTime.ToUniversalTime())
-                .AppendFormat("Self-update:\t{0}\n", Configuration.SelfUpdateTimeout)
+                .AppendFormat("Started:\t\t{0}\n", proc.StartTime)
+                .AppendFormat("Uptime:\t\t{0}\n", DateTime.UtcNow - proc.StartTime.ToUniversalTime())
                 .AppendFormat("Hostname:\t{0}\n", Environment.MachineName)
                 .AppendFormat("Build info:\t{0}{1}\n", InteractiveInGate.Properties.Resources.BuildDate.Replace(Environment.NewLine, ""),
 #if DEBUG
@@ -114,6 +111,9 @@ namespace InteractiveInGate
                 "RELEASE"
 #endif
                 )
+                .AppendFormat("Configuration:\t{0}\n", Path.GetFullPath(conf))
+                .AppendFormat("Lookup used:\t{0}\n", Configuration?.Executor?.Process[0]?.RadeaLookup == true ? "yes" : "no")
+                .AppendFormat("Lookup size:\t{0}\n", (this?.MainWindow as InteractiveInGate.Views.MainWindow)?.LookupSize)
                 .ToString();
 
         }
@@ -124,23 +124,29 @@ namespace InteractiveInGate
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
-            var activationData = Environment.MachineName + "_routergate.json";
+            var activationData = Environment.MachineName + "_iigate.json";
+
             try
             {
-                activationData = String.Join(" ", AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData);
-                Logger.Info("Using appref-ms parameters {0}", activationData);
+                // Do not throw exceptios as part of normal application control - it is ugly 
+                // activationData = String.Join(" ", AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData);
+
+                if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments != null)
+                {
+                    activationData = String.Join(" ", AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData);
+                    Logger.Info("Using appref-ms parameters {0}", activationData);
+                }
+               
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Logger.Info("Using exe parameters {0}", String.Join(" ", e.Args));
+                // Logger.Info("Using exe parameters {0}", String.Join(" ", e.Args));
+                Logger.Error("Error in determining application activation arguments", ex.Message);
             }
 
             conf = e.Args.Length > 0 ? e.Args[0] : activationData;
             Logger.Info($"Loading configuration from {conf}");
-            //var builder = new ConfigurationBuilder()
-            //     .SetBasePath(Directory.GetCurrentDirectory())
-            //     .AddJsonFile(conf);
-            //Configuration = builder.Build();
+
             try
             {
                 Configuration = Config.FromJson(File.ReadAllText(conf));
@@ -158,42 +164,6 @@ namespace InteractiveInGate
             CultureInfo.DefaultThreadCurrentUICulture = ci;
             //Resources.MergedDictionaries.Clear();
             Resources.MergedDictionaries.Add(new ResourceDictionaryLocator());
-
-            updateTimer = new Timer(_ => UpdateCheck(conf), 0, TimeSpan.Zero, TimeSpan.FromHours(Configuration.SelfUpdateTimeout));
-        }
-
-        private void UpdateCheck(string conf)
-        {
-            try
-            {
-                Logger.Info("Checking for update...");
-                if (!ApplicationDeployment.IsNetworkDeployed)
-                {
-                    Logger.Info("Application is not network deployed and therefore cannot be updated.");
-                    return;
-                }
-                var ad = ApplicationDeployment.CurrentDeployment;
-                if (!ad.CheckForDetailedUpdate().UpdateAvailable)
-                {
-                    Logger.Info("Update not found.");
-                    return;
-                }
-                Logger.Info("Update found.");
-                ad.Update();
-                Logger.Info("Self-update done from version {0} to {1}.", ad.CurrentVersion, ad.UpdatedVersion);
-                var assembly = Assembly.GetExecutingAssembly();
-                var restartApp = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Programs), // 
-                    (assembly.GetCustomAttributes(typeof(AssemblyProductAttribute), false)[0] as AssemblyProductAttribute)?.Product,
-                    (assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false)[0] as AssemblyTitleAttribute)?.Title + ".appref-ms");
-                Logger.Info("Restarting... ({0} {1})", restartApp, conf);
-                System.Diagnostics.Process.Start(restartApp, conf);
-                Dispatcher.Invoke(() => ShutdownApp(), DispatcherPriority.Normal);
-
-            }
-            catch (Exception e)
-            {
-                Logger.Info("Cannot check for update: {0}", e.Message);
-            }
         }
 
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

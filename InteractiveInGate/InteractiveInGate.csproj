@@ -134,6 +134,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Resource Include="Languages\en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Languages\fi-FI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -200,5 +208,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\NurApiDotNet.1.9.13\build\net20\NurApiDotNet.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NurApiDotNet.1.9.13\build\net20\NurApiDotNet.targets'))" />
+    <Error Condition="!Exists('packages\NurApi.1.9.17\build\net20\NurApi.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NurApi.1.9.17\build\net20\NurApi.targets'))" />
   </Target>
+  <Import Project="packages\NurApi.1.9.17\build\net20\NurApi.targets" Condition="Exists('packages\NurApi.1.9.17\build\net20\NurApi.targets')" />
 </Project>

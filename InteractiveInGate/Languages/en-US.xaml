@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="ProgressPageTitle">Routing to target:</system:String>
+    <system:String x:Key="Cancel">Cancel</system:String>
+
+    <system:String x:Key="ItemsPageTitle">Routing report:</system:String>
+    <system:String x:Key="CloseItemsPage">Close report</system:String>
+   
+    <system:String x:Key="OfflineMode">Offline Mode</system:String>
+    <system:String x:Key="CriticalError">Critical Error!</system:String>
+    <system:String x:Key="TagsNotFound" xml:space="preserve">Tags not found.&#x0a;Please check config</system:String>
+    <system:String x:Key="CannotReport" xml:space="preserve">Cannot report.&#x0a;Please check config</system:String>
+    <system:String x:Key="ConfigurationError">Configuration Error</system:String>
+
+</ResourceDictionary>

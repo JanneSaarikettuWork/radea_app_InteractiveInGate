@@ -6,6 +6,7 @@ namespace InteractiveInGate
     public class SingletonNavigator
     {
         private readonly Frame rootFrame;
+        // TODO
         //private readonly StartPage startPage;
         //private readonly ProgressPage progressPage;
         //private readonly ItemsPage itemsPage;
