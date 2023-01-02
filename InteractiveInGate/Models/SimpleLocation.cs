@@ -13,10 +13,12 @@ namespace InteractiveInGate.Models
         private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private const int MAXIMUM_HIERARCHY_DEPTH = 100;
         
-        // TODO "laundry_site_slug": "true" used at Medanta (slug?.. what is the meaning of the word in this context?)
-        // public string CustomerLocationMetaKey { get; set; } = "laundry_site_slug";
-        public string CustomerLocationMetaKey { get; set; } = "RouterGateDestination";
-        public string RouterNameMetaKey { get; set; } = "RouterName"; // TODO: muuta tämä
+        // "laundry_site_slug": "true" used at Medanta (slug?.. what is the meaning of the word in this context?)
+        public string CustomerLocationMetaKey { get; set; } = "laundry_site_slug";
+        // public string CustomerLocationMetaKey { get; set; } = "RouterGateDestination";
+
+        // Get custom name from metadata with this key
+        // public string RouterNameMetaKey { get; set; } = "RouterName";
 
         public List<SimpleLocation> Children { get; set; }
         public bool IsLeafNode { get; private set; }
@@ -31,8 +33,8 @@ namespace InteractiveInGate.Models
 
             if (null != mLocationNode.Metadata)
             {
-                if (mLocationNode.Metadata.ContainsKey(RouterNameMetaKey))
-                    Name = mLocationNode.Metadata[RouterNameMetaKey];
+                //if (mLocationNode.Metadata.ContainsKey(RouterNameMetaKey))
+                //    Name = mLocationNode.Metadata[RouterNameMetaKey];
                 if (mLocationNode.Metadata.ContainsKey(CustomerLocationMetaKey) && mLocationNode.Metadata[CustomerLocationMetaKey].ToLower() == "true")
                     IsInteractiveInGateSource = true;
             }

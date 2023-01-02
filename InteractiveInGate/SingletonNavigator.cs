@@ -6,8 +6,9 @@ namespace InteractiveInGate
     public class SingletonNavigator
     {
         private readonly Frame rootFrame;
+        private readonly StartPage startPage;
+
         // TODO
-        //private readonly StartPage startPage;
         //private readonly ProgressPage progressPage;
         //private readonly ItemsPage itemsPage;
         //private readonly PingPage pingPage;
@@ -15,7 +16,7 @@ namespace InteractiveInGate
         public SingletonNavigator(Frame root)
         {
             rootFrame = root;
-            //startPage = new StartPage(this);
+            startPage = new StartPage(this);
             //progressPage = new ProgressPage(this);
             //itemsPage = new ItemsPage(this);
             //pingPage = new PingPage(this);
@@ -35,11 +36,11 @@ namespace InteractiveInGate
         {
             CurrentPage = target;
 
-            //switch (target)
-            //{
-            //    case PageView.Start:
-            //        rootFrame.Content = startPage;
-            //        break;
+            switch (target)
+            {
+                case PageView.Start:
+                    rootFrame.Content = startPage;
+                    break;
             //    case PageView.Progress:
             //        rootFrame.Content = progressPage;
             //        break;
@@ -49,7 +50,7 @@ namespace InteractiveInGate
             //    case PageView.Ping:
             //        rootFrame.Content = pingPage;
             //        break;
-            //}
+            }
         }
     }
 }
