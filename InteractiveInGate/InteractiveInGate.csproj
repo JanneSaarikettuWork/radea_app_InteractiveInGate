@@ -54,7 +54,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Process, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\lib_Process.1.2.5\lib\net462\Process.dll</HintPath>
+      <HintPath>..\..\Libs\radea_lib_Process\Process\bin\Debug\net462\Process.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -158,9 +158,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="lib_Process">
-      <Version>1.2.5</Version>
+    <PackageReference Include="IO.Swagger" Version="2.0.1" />
+    <PackageReference Include="lib_Multireader" Version="1.2.0" />
+    <PackageReference Include="morelinq" Version="3.1.0" />
+    <PackageReference Include="NurApiDotNet" Version="1.9.13" />
+    <PackageReference Include="Synchronize" Version="2.1.4" />
+    <PackageReference Include="SyncRadea" Version="2.1.4" />	
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="LibLog" Version="5.0.4">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="NLog" Version="4.5.11" />
+    <PackageReference Include="NLog.Config" Version="4.5.11" />
+    <PackageReference Include="NLog.Schema" Version="4.5.11" />
+    <PackageReference Include="radeaFramework" Version="1.0.0" />
+    <PackageReference Include="radeaToolbox" Version="2.1.1" />
+    <PackageReference Include="rfid" Version="2.2.8" />
     <PackageReference Include="MahApps.Metro">
       <Version>2.4.9</Version>
     </PackageReference>
