@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InteractiveInGate.Models
 {
-    class SimpleLocation
+    class SimpleLocation : IEquatable<SimpleLocation>, IComparable<SimpleLocation>
     {
         private LocationNode mLocationNode;
         private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
@@ -178,6 +178,22 @@ namespace InteractiveInGate.Models
             {
                 if (locations.Contains(removed)) locations.Remove(removed);
             }
+        }
+
+        public bool Equals(SimpleLocation other)
+        {
+            if (other == null) 
+                return false;
+
+            return (this.Name.Equals(other.Name));
+        }
+
+        public int CompareTo(SimpleLocation other)
+        {
+            if (other == null)
+                return 1;
+
+            return this.Name.CompareTo(other.Name);
         }
     }
 }

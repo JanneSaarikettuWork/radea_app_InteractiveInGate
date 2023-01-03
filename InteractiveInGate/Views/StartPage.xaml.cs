@@ -260,6 +260,60 @@ namespace InteractiveInGate.Views
                 }
             }
 
+            // IF locations sorting = alphabetical by name
+            // if (true) // TODO
+
+            // Sort or not - for comparing the results
+            Random rand = new Random();
+            if (rand.NextDouble() >= 0.5) // TODO
+            {
+
+
+                List<Models.SimpleLocation> sortedLocations = new List<Models.SimpleLocation>();
+                List<Models.SimpleLocation> sortedNonLeafLocations = new List<Models.SimpleLocation>();
+                List<Models.SimpleLocation> sortedLeafLocations = new List<Models.SimpleLocation>();
+
+                // Add link to upper level in the location tree, if there is a upper level
+                if (listLocations.Contains(null)) 
+                {
+                    sortedLocations.Add(null);
+                }
+
+                // Sort and add non null and non leaf locations
+                foreach (Models.SimpleLocation loc in listLocations) 
+                { 
+                    if (loc == null)
+                        continue;
+
+                    // In UI node seems to be handled as non-leaf only if it has two of more children
+                    // if (loc.IsLeafNode == false)
+                    if (loc.Children.Count >= 2)
+                        sortedNonLeafLocations.Add(loc);
+                }
+
+                sortedNonLeafLocations.Sort();
+                sortedLocations.AddRange(sortedNonLeafLocations);
+
+                // Sort and add non null and leaf locations
+                foreach (Models.SimpleLocation loc in listLocations)
+                {
+                    if (loc == null)
+                        continue;
+
+                    // In UI node seems to be handled as leaf if it has one child or less
+                    // if (loc.IsLeafNode)
+                    if (loc.Children.Count <= 1)
+                        sortedLeafLocations.Add(loc);
+                }
+
+                sortedLeafLocations.Sort();
+                sortedLocations.AddRange(sortedLeafLocations);
+
+                listLocations = sortedLocations;
+            }
+
+
+
             int RowsCount = listLocations.Count;
 
             if (RowsCount >= 4)
