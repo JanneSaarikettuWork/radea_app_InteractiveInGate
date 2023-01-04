@@ -23,6 +23,9 @@ namespace InteractiveInGate.Models.Json
         [JsonProperty("TagsWaitTimeout", Required = Required.Always)]
         public long TagsWaitTimeout { get; set; }
 
+        [JsonProperty("SortLocations", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        public bool SortLocations { get; set; }
+
         [JsonProperty("Report", Required = Required.Always)]
         public Report Report { get; set; }
 

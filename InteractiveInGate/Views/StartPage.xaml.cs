@@ -260,15 +260,9 @@ namespace InteractiveInGate.Views
                 }
             }
 
-            // IF locations sorting = alphabetical by name
-            // if (true) // TODO
-
-            // Sort or not - for comparing the results
-            Random rand = new Random();
-            if (rand.NextDouble() >= 0.5) // TODO
+            // IF locations sorting = alphabetical by name, RADEA-2203
+            if (App.Configuration.SortLocations == true)
             {
-
-
                 List<Models.SimpleLocation> sortedLocations = new List<Models.SimpleLocation>();
                 List<Models.SimpleLocation> sortedNonLeafLocations = new List<Models.SimpleLocation>();
                 List<Models.SimpleLocation> sortedLeafLocations = new List<Models.SimpleLocation>();
@@ -311,8 +305,6 @@ namespace InteractiveInGate.Views
 
                 listLocations = sortedLocations;
             }
-
-
 
             int RowsCount = listLocations.Count;
 
@@ -367,6 +359,9 @@ namespace InteractiveInGate.Views
                 stackPanel.Children.Add(new Label() { Width = 0 });
                 var locationButton = new RadioButton() { GroupName = "Location", Content = stackPanel, Margin = new Thickness(4), BorderThickness = new Thickness(0,0,8,8), Foreground = Brushes.White};
                 locationButton.Resources.Add("location", location);
+
+                // The name in the button may be truncated, add full name as tooltip, RADEA-2203
+                locationButton.ToolTip = (location == null ? "Back to upper level" : location.Name);
 
                 locationButton.Click += Location_Click;
                 Grid.SetColumn(locationButton, i / RowsCount); // Fill items vertically column by column
