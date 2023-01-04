@@ -248,6 +248,13 @@ namespace InteractiveInGate.Views
             if (locationsToRender == topLevelLocations)
             {
                 listLocations = locationsToRender;
+
+                // Hide single root location in UI, setting from configuration, RADEA-2203
+                if (locationsToRender.Count == 1 && App.Configuration.HideSingleRoot == true)  
+                {
+                    listLocations = locationsToRender[0].Children;
+                }
+
             }
             else
             {
@@ -344,8 +351,9 @@ namespace InteractiveInGate.Views
                 {
                     String adjustedString = TruncateAndWrap(location.Name);
 
-                    // Make both top level locations be written in bold
-                    textBlock = new TextBlock() { Text = adjustedString, FontWeight = hasMultipleSubNodes ? FontWeights.Bold : (locationsToRender == topLevelLocations) ? FontWeights.Bold : FontWeights.Normal, TextAlignment = TextAlignment.Center };
+                    // Make both top level locations be written in bold - NO, that is TTR spesific, NOT in IIG
+                    // textBlock = new TextBlock() { Text = adjustedString, FontWeight = hasMultipleSubNodes ? FontWeights.Bold : (locationsToRender == topLevelLocations) ? FontWeights.Bold : FontWeights.Normal, TextAlignment = TextAlignment.Center };
+                       textBlock = new TextBlock() { Text = adjustedString, FontWeight = hasMultipleSubNodes ? FontWeights.Bold : FontWeights.Normal, TextAlignment = TextAlignment.Center };
                 }
                 else
                     textBlock = new TextBlock() { Text = ". . .", FontWeight = FontWeights.Bold, Opacity = 0.5 };

@@ -18,7 +18,17 @@ Windows UI application for managing incoming items gate.
     "AutoConfirmTimeout": 30, // Time (s) after which the routing report page is automatically closed
     "TagsWaitTimeout": 20,    // Max. duration (s) of the progressbar animation in the routing page
     "SortLocations": true,    // Optional, true or false (default). If true, locations are sorted alphabetically.
+    "HideSingleRoot": true,   // Optional, true or false (default). If true, single root location is not shown in UI.
     "StreamInventory": true,
     ...
+  "executor": {
+    "description": "Interactive In Gate configuration",
+    "process": [
+      { // process configuration (first)
+        // Replaced by "operating_mode"
+        // "is_interactive_in_gate": true,  // Must be set true for Interactive In Gate.
+        // Must be "InteractiveInGate" for Interactive In Gate.
+        "operating_mode": "InteractiveInGate", // "RouterGate" (default), "TrackAndTraceRouter", "InteractiveInGate"
+
   }
   ```

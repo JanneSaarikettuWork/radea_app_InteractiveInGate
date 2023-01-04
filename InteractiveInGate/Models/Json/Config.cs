@@ -26,6 +26,9 @@ namespace InteractiveInGate.Models.Json
         [JsonProperty("SortLocations", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
         public bool SortLocations { get; set; }
 
+        [JsonProperty("HideSingleRoot", Required = Required.DisallowNull, NullValueHandling = NullValueHandling.Ignore)]
+        public bool HideSingleRoot { get; set; }
+
         [JsonProperty("Report", Required = Required.Always)]
         public Report Report { get; set; }
 

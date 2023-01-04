@@ -128,7 +128,8 @@ namespace InteractiveInGate.ViewModels
             // Tell process that we are running a Track and Trace gate - in contrast to RouterGate
             // process.IsTtrGate = true;
             // TODO: Tell process that we are running a IIG - in contrast to RouterGate or Track and Trace gate 
-            process.IsIiGate = true;
+            // process.IsIiGate = true;
+            // REPLACED by operating_mode configuration setting
 
             Task.Run(async () => // Poll offline status every minute
             {
