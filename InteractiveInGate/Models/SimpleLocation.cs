@@ -12,13 +12,15 @@ namespace InteractiveInGate.Models
         private LocationNode mLocationNode;
         private static readonly NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         private const int MAXIMUM_HIERARCHY_DEPTH = 100;
-        
+
         // "laundry_site_slug": "true" used at Medanta (slug?.. what is the meaning of the word in this context?)
-        public string CustomerLocationMetaKey { get; set; } = "laundry_site_slug";
+        // No, acc. to Vesa Jan 5th 2023 "laundry_site_slug" is used to indicate some Radea report generation location.
+        // TODO: this is open
+        public string CustomerLocationMetaKey { get; set; } = ""; // "laundry_site_slug";
         // public string CustomerLocationMetaKey { get; set; } = "RouterGateDestination";
 
         // Get custom name from metadata with this key
-        // public string RouterNameMetaKey { get; set; } = "RouterName";
+        public string RouterNameMetaKey { get; set; } = "RouterName";
 
         public List<SimpleLocation> Children { get; set; }
         public bool IsLeafNode { get; private set; }
@@ -33,12 +35,16 @@ namespace InteractiveInGate.Models
 
             if (null != mLocationNode.Metadata)
             {
-                //if (mLocationNode.Metadata.ContainsKey(RouterNameMetaKey))
-                //    Name = mLocationNode.Metadata[RouterNameMetaKey];
+                if (mLocationNode.Metadata.ContainsKey(RouterNameMetaKey))
+                    Name = mLocationNode.Metadata[RouterNameMetaKey];
+
+                // TODO: this is open
                 if (mLocationNode.Metadata.ContainsKey(CustomerLocationMetaKey) && mLocationNode.Metadata[CustomerLocationMetaKey].ToLower() == "true")
                     IsInteractiveInGateSource = true;
             }
-            
+            // TODO: this is open - for now, just show all locations in the location tree
+            IsInteractiveInGateSource = true;
+
 
             Children = new List<SimpleLocation>();
             if (recursionDepth < MAXIMUM_HIERARCHY_DEPTH)
