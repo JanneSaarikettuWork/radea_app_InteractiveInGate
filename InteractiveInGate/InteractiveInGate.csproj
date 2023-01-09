@@ -57,6 +57,14 @@
       <HintPath>..\..\Libs\radea_lib_Process\Process\bin\Debug\net462\Process.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Synchronize, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\radea_lib_SyncModule\Synchronize\bin\Debug\net462\Synchronize.dll</HintPath>
+    </Reference>
+    <Reference Include="SyncRadea, Version=2.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\radea_lib_SyncModule\SyncRadea\bin\Debug\net462\SyncRadea.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -162,8 +170,6 @@
     <PackageReference Include="lib_Multireader" Version="1.2.0" />
     <PackageReference Include="morelinq" Version="3.1.0" />
     <PackageReference Include="NurApiDotNet" Version="1.9.13" />
-    <PackageReference Include="Synchronize" Version="2.1.4" />
-    <PackageReference Include="SyncRadea" Version="2.1.4" />	
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="LibLog" Version="5.0.4">
