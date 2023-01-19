@@ -1,0 +1,395 @@
+
+
+URL:	https://demo02.radea.app/
+user:	medanta.test.reader
+pwd:	********
+option:	tree
+
+Press enter to continue.. or Ctrl-c to stop.
+Successfully logged in to Radea server https://demo02.radea.app/.
+Name= uuid= customer=
+[
+ Name=Pesula Test uuid=03d07df3-621e-47d8-9391-e406196bbe65 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+ [
+  Name=Medanta Jokilaakson Pesula Test uuid=96e9ce2f-80a8-483c-b741-169cd28014cb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+  [
+   Name=Likapyykki Test uuid=9842751e-c0e4-47d7-9e4e-d0def7e50347 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Varasto Test uuid=7eaabac7-4686-46a7-b0e5-2667acbf26e7 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Lumputus Test uuid=e681b3e9-ed9f-4f77-ac42-b5f3cf73a9f3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+  ]
+  Name=MEDANTA PIRKKALA Pesula Test uuid=b3a64b53-f0a9-4d68-921c-fe83f7971334 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+  [
+   Name=Likapyykki Test uuid=495fbc48-b87f-435d-a120-f95a3edb8dcf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Lumputus Test uuid=1c3de704-feb2-4bd4-87a3-d89c1de0d948 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Varasto Test uuid=ac429a82-bfcb-4a02-b07a-34f05734dad0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Pakkaamo Test uuid=9dc75fd4-8a08-4ef5-9b2f-801f802908db customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+  ]
+ ]
+ Name=Asiakkaat Test uuid=e8067b9a-9374-4162-a29a-8b61d0a257cf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+ [
+  Name=Medanta Jokilaakson Test uuid=bd542aac-603d-4545-bc2f-b25906781fef customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+  [
+   Name=Jamsan Ateria liikelaitos Test uuid=160dcaaf-02e7-4007-9ed0-5bb1afcdeda1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=YT Test uuid=1877b6ca-e92b-4bd4-9872-ebcc26d3eff2 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Arina Test uuid=5ba69579-5c77-462b-9162-584f661b2c1f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Jamsan kaupunki Test uuid=ffa2f133-430b-4c68-8567-01e06f89747d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Sivistystoimi Varhaiskasvatus Test uuid=5f05313a-ed6a-469d-a284-6c387b7d0295 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Kotilo Test uuid=6575d01c-2b5a-4efd-b29c-e9bdb8a08ca3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Puukila Test uuid=74d24e60-e0b5-49ce-a1ce-6c114d61ec21 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Jokivarsi Test uuid=1fb025c5-5fba-49d8-931b-48c225191dcf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Paanunkoulu Test uuid=e5dfea81-561b-4110-8803-6db1e334dc7f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Viiskulma Test uuid=08838203-de03-439d-bd1f-b8935a84a0eb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Juokslahti Test uuid=89851232-5b33-4a61-a180-ed886f93eafe customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Kaipola Test uuid=4d7d9d62-7bc9-4796-8e9f-96b3da5928fc customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Vinkat Test uuid=01ae2ef5-2345-4a03-91db-3b9e36efe7f6 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Lankipohja Test uuid=2c89c71b-866a-4a9c-93ae-3508224e441f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Musikkiopisto Test uuid=335c0f5d-ee35-4df6-b456-cb9c69e2dd3d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Palomaki Test uuid=fd24b111-0e56-43f8-8d18-6a5069df0dea customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Linnakoti Test uuid=bdfaaa54-3a9c-4311-92d2-961f436e748c customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Jamsan kristillinen opisto ry Test uuid=44c6324f-532d-4219-a3a2-7f94a0d5f71e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Oral Hammaslaakarit Oyj Test uuid=42dd18c7-d7b4-489d-9c77-14578386da7c customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Oral Jyvaskyla Seppala Test uuid=26e7246f-f97b-48b2-ae23-e1a759980323 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Jyvaskyla Vainonkatu Test uuid=60541fc8-d838-4b74-95d7-b659b3afa8ce customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kuopio Puijo Test uuid=df20dcc2-38d5-4e13-9822-b0725acd6485 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kuopio Sektori Test uuid=f84a6229-b3da-46f9-bad7-3f559765bae7 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Oulu Galleria Test uuid=a14ec880-af5e-476f-8977-7eed46027bb5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Oulu Ideapark Test uuid=f4c2c80a-9bfa-46a9-bd73-b6238eb4f341 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Oulu Lakaritalo Test uuid=639a5615-faf3-4c27-944a-ab4402f78fb0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Imatra Test uuid=c23cd3ff-b8ac-4512-a00f-0341cb56dc70 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Joensuu Test uuid=4ebcb215-15fd-48e4-8b72-0e7d12944459 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kemi Test uuid=e28f3762-73f4-4753-9c0a-f3fb6e81b58b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kirkkonummi Test uuid=8ae2cb20-ace6-4a64-91ad-58935c721b31 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kokola Test uuid=fc5b7eae-5e20-4d20-934c-f0eddd63259e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kotka Helila Test uuid=dc34f261-cc6b-4174-bbda-c3006deecafd customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kotka keskusta Test uuid=0dde1760-283e-413c-9824-679ce2dd82cb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kouvola Test uuid=17d691e6-6897-42ca-a925-ca9b8466fb52 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kuusankoski  Test uuid=a06c06a1-ac0a-4879-aaa6-a55e6bf26a8f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Lappeenranta Toikankatu Test uuid=42f3b72a-647a-474a-bacb-d837bf83beff customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Mikkeli Test uuid=8ccb5bf3-71e9-4a9e-8804-4f23426cd38d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Pieksamaki Keskuskatu 6 Test uuid=32549feb-2eb7-465d-809a-3679d0404b90 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Porvoo Test uuid=e09ab03e-d0d6-43ed-bdb1-859ee807ff48 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Rovaniemi Rovakatu Test uuid=194e13ca-e799-4f40-9299-b3d4d59d87bc customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Rovaniemi Urheilukatu Test uuid=73f56e22-7339-4ffe-b94a-80d464a59782 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Savonlinna Test uuid=179574c4-f0cd-4974-be58-25e4c2c343b3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Tammisaari Test uuid=d1e195c6-5bc0-4c0f-879a-cea54b0ae9eb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Tornio Test uuid=fb5efaf9-af0d-4b03-b2f3-8fdeda696d1d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Vaasa Test uuid=6fbfdfc2-d4bd-4e42-b8d4-4ef53938bd50 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Varkaus Test uuid=9df7a18a-34c3-4834-a205-c76248025bf8 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Viitasaari Test uuid=d20f287d-67e8-473b-9d34-8ab86b109092 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Salo Labodent Test uuid=153f95dc-ec7c-4e4b-ad72-9f8da5e6d572 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Salo Plaza Test uuid=e3dc83b9-d7ad-4a57-946a-2dcfa1fbfb0a customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Nummela/14 Test uuid=8a62d212-0cf2-46f4-b15f-2ca13c9fdd3f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna Lakarikeskukset Oy Test uuid=477c3c53-6145-4569-82d9-6c84c3c5468d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna V„likatu J„ms„ Test uuid=2c57f234-60fd-4078-905e-cb3bc9d44bba customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Oulu L„„k„rikeskus Test uuid=03f48a46-0d9b-40c1-8998-4ba6a2b06ac8 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Rehapolis Test uuid=6a81198d-36b1-4146-ab68-639bcabd34e9 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Oulu Hallituskatu Test uuid=50e46ea9-534d-4c4e-923e-a3f323dd4c2b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Kempele Test uuid=df884722-95f1-4211-9dca-1611aca2ae38 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna Oma Sairaala Oy Test uuid=43b02d3e-da05-4901-b671-7e3972658286 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna Oma Sairaala Oulu Test uuid=481056f2-d17f-41c8-b3ec-8a4bb0d5ad24 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Oma Sairaala Kuopio Test uuid=99a2bc02-2d40-4401-9eec-5ea75dd503a2 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Oma Sairaala Oy Test uuid=f78f70d9-cba9-47fa-8f2d-30d20db6af17 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Jamsan Terveys Test uuid=4c1ece2c-a51d-42bc-b5fc-516036405db7 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Jamsan Hammashoitola Test uuid=bc8c7231-5f13-48db-beec-94c7c7c14b74 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Hallin Hammashoitola/TK Test uuid=17ea7b2a-8267-45eb-9486-87d3e0c72ac4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Lankipohja TK Test uuid=4851e3eb-05c1-4797-b903-f5c3a1412e19 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Lankipohja PT Test uuid=62702ce6-1ec0-4ad0-aa18-3a02a9c0264d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Seppolan PT Test uuid=adb6c2db-667a-4016-9ddb-b3c15c13546f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=L-talo Test uuid=490f5e89-8e82-4104-8bb3-f6dd039a1098 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=N-talo Test uuid=3aee1a5e-dd4f-4ab5-a196-df16e8fde2d0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=O-talo Test uuid=992b9ccc-c026-42a8-ab80-e001e43fd6db customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kuntoutus Test uuid=98e2ff11-e3a6-4f3d-bc15-80c67ffa477f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Dialyysi Test uuid=94f687f3-6c1e-4a7b-8a84-dcf253f9f47d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Hallinto Test uuid=68cbf180-3bc3-4226-b2b5-37e1705a1b26 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=MTK Test uuid=11df9539-e24c-4d4d-b515-938b54c0dd59 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kotihoito Test uuid=ede3d911-326b-4813-9895-02403abe0ada customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Neuvola Test uuid=cc9e49ba-1c3d-40d9-b5f4-a84664682007 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Apuvalineet/kuntoutus Test uuid=d1751e3d-d33a-4448-9b5a-631a3899878b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Halli PT Test uuid=227b7179-95b6-4367-9bb4-0083c13655c8 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Jokilaakson Terveys Test uuid=ae2d2f1e-3c78-4a8b-a77a-036dc7cceb9d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Osasto 2 Test uuid=90b7c1fc-8cb3-469b-bebf-e1b5916e1122 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Osasto 4 Test uuid=ba4bba6c-c5de-4042-bf94-b03bd9f69cbb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Osasto 5 Test uuid=bd67ec4d-48a4-4b13-b31f-47f92dedcfc9 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=ToimenpideyksikkoTest uuid=62db3f7c-42b8-4fe3-9a26-8d3ee3c36bba customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Toimenpideyksikko/V„linehuolto Test uuid=ebd6772a-4385-4fab-9864-1cf535ebdcf0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Paivakirurgia Test uuid=d275455a-d19b-4799-adf5-74fbecdf779a customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Poliklinikka Test uuid=d64c3401-bbfc-4ba1-839a-d709dda410e6 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Ensiapu Test uuid=46381b8e-d24b-49bd-b0cb-7a86a11c4b92 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kuvantaminen Test uuid=75ea342b-36a7-42c3-af33-26284df52161 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Avovastaanotto Test uuid=d58278c3-ed93-41f9-bd3b-e84f25cddd46 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Harjun Terveys Test uuid=095a89c9-821d-4c92-934f-208b9e2dacaf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Harjun Terveys Test uuid=2e00207f-7c83-4428-b973-d0b85404d87d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Hartolan Sote-keskus/AVO Test uuid=a1b233b7-8a5a-433d-97c1-eb4659f0fcd5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Hartolan Hammashoitola Test uuid=97ecb555-e03d-41fe-847e-acc702f7b2a4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+  ]
+  Name=Medanta Pirkkala Test uuid=4b4649a7-e017-4764-a34f-6f4bd988e470 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+  [
+   Name=Mehil„inen - Bulevardin Klinikka Test uuid=d15015d8-987f-4771-9f34-b29cd03ae46e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Dextra Lapsettomuusklinikka Oy Test uuid=a63eba94-cfda-4ba7-a923-6988cb7a95b2 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Hygga Oy Test uuid=7f5941eb-d66e-4754-adbd-192d0cc48618 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Oriveden Apteekki Test uuid=2a31b498-f66b-4d36-b18e-51295771a073 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   Name=Norlandia Care Oy Test uuid=1779b669-243a-494a-abf9-32798e19317f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Norlandia Care Tuusula Test uuid=c8faa3f8-1bc0-40a0-8fba-4116f86c25ad customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Norlandia Care Kuopio PuijonUppee Test uuid=d32af1d2-b2a8-45b7-bb7d-88c392a062f1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Norlandia Care Kuopio Oy Test uuid=5b861b05-8921-45c3-831e-14a1a9804b3e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=PuijonKuppee Test uuid=3910c4ac-4510-46a7-99f2-ec38b3a061a2 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Norlandia Care Malminkartano Oy Test uuid=886a057c-5eea-40d4-86bf-16505f60a49b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna Koskiklinikka Test uuid=a17085ea-f9c9-4700-88f4-f50098463d22 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna Koskiklinikka L„„k„rikeskus Test uuid=696decb4-6b1a-49ab-852c-5708c88c7d04 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Ty”terveyshuolto Test uuid=b4dcca0a-2724-4cd5-96b7-dd3ab30cec09 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Vastaanottopalvelut Test uuid=1b4e703f-c10b-4362-b1a8-7cf92f71cec1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Kassapalvelut Test uuid=56bb2b52-1fc3-4b56-a427-a532457ba084 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Hoitajapalvelut Test uuid=12698068-704f-4eb2-96c3-eb49c9f4ad8e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Tutkimuspalvelut Test uuid=4946a9bc-cf35-4515-b7ef-b7e978132bb0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Ty”terveys Test uuid=f09afe75-8f38-4779-b66e-df1eeeb3bd50 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Laboratorio Test uuid=b84e6322-40b5-4630-bb45-9bb0ff474fc4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Pihlajalinna Koskiklinikka Sairaala Test uuid=c5e01e64-151e-4a5e-8da2-e8bd62d5389b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Koskiklinikka Kuvantaminen Test uuid=73e4b77a-b75e-45bc-ba3c-f8705653682f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Viola Kotiyhdistys Ry Test uuid=79864edc-b872-446a-8b41-35df5b6d73bb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Viola Kotiyhdistys Ry - Viola-Koti Test uuid=d68c6563-e3bc-4658-a27b-95a0fe45e8b8 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Keitti” Test uuid=af4aa666-2792-4d36-9369-d690550630f2 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Viola Kotiyhdistys Ry - Pellavakoti Test uuid=628ae75d-47a9-42c8-bee2-220fc10087a3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Viola Kotiyhdistys Ry - Willa Viola Test uuid=dd55dc3b-dfde-47e1-bc46-bb9314745857 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Kolmostien Terveys Oy Test uuid=f540a20b-9f64-4c0f-b16f-ef87ec95ec64 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Kolmostien Terveys Oy - Hammashoitola Kihni” Test uuid=32998f45-4ce5-4be9-823e-76e15ffd4c93 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kolmostien Terveys Oy - Hammashoitola Parkano Test uuid=7209ac49-355b-49ff-8dcc-994168844e67 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kolmostien Terveys Oy - Kihni”n vastaanottotoiminnot Test uuid=7679cde4-8fc6-459b-8a40-666d018f3fc0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kolmostien Terveys Oy - Kihni” kuntoutus Test uuid=43e71802-6582-4aeb-891c-aebcdd27d2f5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kolmostien Terveys Oy - Parkanon kotihoito Test uuid=5e995acf-391c-4411-8970-a926521bcae6 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kolmostien Terveys Oy - Parkanon Poliklinikka Test uuid=aeb2b82e-1e8e-441d-bf4c-a09971a8e7f0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Vastaanottotoiminnot Test uuid=680bf092-cc59-45a9-a07b-451f8359adda customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Kolmostien Terveys Oy - Parkanon Terveyskeskussairaala Test uuid=19b737cf-7ba5-433b-93d8-59b7c0c42b67 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Fysioterapia Test uuid=c9de518c-800e-4c64-8748-e6b827a8c901 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=R”ntgen Test uuid=450e8ea9-484c-4c38-981e-fc8c0ff7fae4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Kuntoutus Test uuid=ac4fe842-45c7-4efd-a2f2-cca197165759 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Neuvola Test uuid=29c47c3e-b526-4ded-a62b-97efb4ae177e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Kolmostien Terveys Oy - Rauhalan Palvelukeskus Test uuid=52830a8c-32c7-4252-9fb4-4e79c5d44e8d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Kolmostien Terveys Oy - Ravintohuolto Test uuid=721c36d9-771e-486e-8080-399e9ec1fdce customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna L„„k„rikeskukset Oy  Test uuid=0c3a61d7-bf7b-4d72-a16e-3c1b9002fa66 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna Hammasklinikka Stockmann Test uuid=2b5ed107-68f9-4062-815e-49b793c9045f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Matinkyl„ Test uuid=e934a345-357e-42f9-9e4c-d36676be6767 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Hammasklinikka Ala-malmi Test uuid=5d67b501-1367-4c86-81df-9fc90433afcf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Tavastia Test uuid=d0c77b19-276a-4d35-961a-904b367d05d0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Naantali Test uuid=4f7ab974-4753-4993-81ae-970d6d71f157 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Raisio Test uuid=27b3158f-d456-4039-95b8-0d54fe90f96b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Sello Test uuid=80dbed7b-2463-4c06-bab0-3fb00786d2db customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Laser Tilkka Test uuid=ec657303-7e22-48b6-aedd-32446e1507e5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Munkkivuori Test uuid=1741b9b8-c746-4a91-9080-118d03280d30 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Vantaa Test uuid=9ad537e1-55c5-41eb-a9aa-b7945e71d105 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Turku  Test uuid=7c0142b1-cb91-49d5-81ae-de28b722b6fc customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Sein„joki Test uuid=51e478ef-331d-4d23-b77a-59efd460c10a customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Iho- ja Estetiikka Test uuid=0c6d8724-a400-46e1-b900-124bd17d4da2 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Pihlajalinna Lahti Test uuid=1a5ccbe7-aed3-4690-b826-de27bf866207 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna M„ntt„ Test uuid=0976374a-2cd3-4d5a-b1d0-cc4dbc3ad9bc customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Piispanportin Terveysasema Test uuid=3c750e5b-4dfe-4cc5-97e0-e1257dca4100 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Piispanportin L„„k„rikeskus Test uuid=1489e831-795d-4f94-af85-2f95f04dc813 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Ikipihlaja Sofianhovi Oy Test uuid=9ef5e133-759a-4f14-b9d2-02a9840b8766 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Oral Hammasl„„k„rit Oyj Test uuid=6606ec40-3547-433d-b28a-58ceb1a52afb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Oral Pikku Huopalahti Test uuid=50533848-953f-45b3-a20d-80207afc43cd customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Pori Test uuid=4c9ee66f-d876-4bd7-b643-88c82de2796d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Turku - H„meenkatu Test uuid=9c1a8748-b643-438b-918a-c6bc5a8ab5e8 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Erottaja Test uuid=364b305e-9b8a-408b-b4d8-d56d91252663 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Hakaniemi Test uuid=d6387857-3384-4dc1-af6f-0ebcf65466f1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral H„meenlinna Test uuid=8095b50b-8708-43e9-8379-3fc28e34ef15 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral It„keskus Test uuid=903b5cf4-f4b6-484c-8039-7fd90d83e446 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral J„rvenp„„ Test uuid=db0debeb-a08f-4c43-8e40-4dfe3fae1cca customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kauppakeskus Kaari Test uuid=3142036e-6d45-46bd-85dd-8a97e28e2244 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Kamppi Test uuid=384d035a-15b2-40d9-ac2d-f59d5f2fbbeb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Lahti Test uuid=da6c2fb2-3e75-4621-90eb-4fb67b0ac445 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Lauttasaari Test uuid=62acb30c-e3a1-4fe7-ba5d-47968335b281 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Malmi Kauppatie Test uuid=59b9b6d9-4b70-4d51-a596-4871ef27d288 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Nokia Test uuid=434ce70b-545a-4b7c-931c-2a2c12043e27 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Tapiola Test uuid=d9034a6d-96bc-489a-b22b-81cc01fa6d78 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral T””l” Test uuid=14d91d95-0b5e-4ffd-9bb1-fb86de624735 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Valkeakoski Test uuid=a1b6e01c-de53-4a94-8718-099784ab9579 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Cityk„yt„v„ Test uuid=ff5b9e32-7ba9-4171-9e14-2954f48f9046 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral TRE Hammaskeskus Test uuid=62fed1b7-46f8-4b7f-9c81-c391be2b8b00 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral TRE Koskikeskus Test uuid=16e2cb03-59fd-4252-a91a-b4c1f1c32681 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral TRE Sumeliuksenkatu Test uuid=41b7b6ae-99d6-4f45-81ac-0dfb61141083 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Lindent Test uuid=8d7cbb9e-9d7a-4048-9f9f-ebc660b97c63 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Hammaslaboratorio Test uuid=d0f7c60c-2372-4924-805a-c90ae9443a93 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Iso Omena Test uuid=2f1572a8-a9b5-4c30-9048-53e1b2d3a748 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Hyvink„„ Torikatu Test uuid=d8d9808a-5a4a-43b2-98a3-5253dc214575 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Riihim„ki Test uuid=a79edd49-ddb5-4b36-ac46-74deaa9ce3f5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Espoontori Test uuid=d184c9d4-25fa-4779-9d14-49630d5c64e3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Keilaniemi Test uuid=b524a6e9-c7d8-4b1e-9710-85968a808529 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Bulevardi Test uuid=52656a86-9160-4d41-9cd0-3b090f122de3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Herttoniemi Test uuid=42749db3-9541-4be9-b576-f226e63fee5f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Malmi Kauppakaarre Test uuid=efbec706-b1dd-4ac5-95ef-b3e0692a4d7a customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Viherlaakso Test uuid=9abd3e63-b94d-44d0-9a88-d165518c0aa1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Niittykumpu Test uuid=6ca39dfe-2877-4972-9ea5-ac9ba4914b9e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Oral Turku Hammaspiste Test uuid=4c3b194d-f4f2-464f-b768-6d7762dfa317 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna Omasairaala Test uuid=1f36d155-fc85-4eac-bbb8-21a898e25a15 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna Omasairaala Oy - Helsinki Pikku Huopalahti Test uuid=5db8ebaa-dcaf-4bbf-931b-c74f3d90f1e1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Omasairaala Oy - Tampere Kelloportti Test uuid=715164ca-697d-40a5-99fe-6114e9ec9aac customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Omasairaala Oy - Turku Kupittaa Test uuid=c013054b-92dc-428e-8c96-67adfe19c159 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna ITE uuid=c68a2efe-fbe2-4d83-b645-d16d26b57cf6 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna ITE Joensuu - L„„k„rikeskus Test uuid=c4150bf4-3a89-40f9-b872-d3b27ff5df6e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Asiakaspalvelu Test uuid=e23d0071-ce8a-400b-be61-b3f93afd7e08 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Fysioterapia Test uuid=57c3cc98-dd38-4100-a7c8-4f4ba34b415f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Laboratorio Test uuid=6302f4fc-4fc6-4370-aac4-6e4f076a0471 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Skopia Test uuid=42488b9c-4479-447d-83e7-7285b75faa63 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+     Name=Vastaanotto Test uuid=b7980ea9-e41c-4eb6-9b92-227614cc32d3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Pihlajalinna ITE - Joensuu Sairaala Test uuid=20cdd793-97c8-4b97-9a24-6327b3602596 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    [
+     Name=Fysioterapia Test uuid=bc035638-a29a-486f-b01e-a6e7be4c5963 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    ]
+    Name=Pihlajalinna ITE - Joensuu Ty”terveys Test uuid=e1b34730-91ef-4356-aadf-47374dd5d08f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna ITE - Joensuu Hammasklinikka Test uuid=b1ae4d99-bd0b-4c1b-9575-93047e636ea3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna ITE - Joensuu Kuvantaminen Test uuid=97d68a10-d021-486f-94be-db437d77c8dd customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna L„„k„rikeskukset Oy ITE uuid=08778eed-b02d-426b-9874-f2238d1c9817 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna Jyv„skyl„ Test uuid=34bde13a-bba2-47d2-9f87-746c5846f03c customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Hammasklinikka Savodent Test uuid=8d6cbae9-9783-4083-8920-25bd83b7a00b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Suonenjoki Test uuid=e62a8416-8799-48e7-9389-b3b039c4ccce customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Varkaus Test uuid=49dbfb0b-f509-4454-b420-0fb102df2011 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Sonkaj„rvi Test uuid=d276c1e8-84fd-4b28-997d-8d0a22a2ea81 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Pielavesi Test uuid=fef14f50-41ed-495b-b23f-f3adcc84d647 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Kiuruvesi Test uuid=a4c08b00-f582-4526-b4c8-69adbaca1d9b customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Vierem„ Test uuid=1120e4eb-9499-46dc-8854-086bb7289372 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Iisalmi Test uuid=18e7d26a-a867-4592-b7f2-c12ed122aa93 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlalinna Kaavi Test uuid=b32973df-929e-444d-8846-0b5e288d80a1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Keitele Test uuid=2717d15d-2a0f-4448-a393-b75ee9cdee36 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Laukaa Test uuid=7433074a-04e3-44de-952b-5942f7149b6c customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Yliopiston Apteekki uuid=1bec6ebf-bb80-422c-a75a-69abc9815953 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Yliopiston Apteekki - Valmistus 006 Test uuid=5d96d3be-621c-4ecd-be20-c0e0bd2968cd customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Yliopiston Apteekki - Annosjakelutuotanto 052 Test uuid=e3eb07a1-3224-4322-b893-e59ec0c0e940 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Yliopiston Apteekki - Laboratorio 077 Test uuid=a6e721ae-5bb5-4843-8abd-68dafc45db32 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Yliopiston Apteekki - SCM logistiikka 005 Test uuid=673d7395-4f6e-4dff-a0e2-09ccb0c76e31 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Yliopiston Apteekki - YA-Talo 002 Test uuid=a2327b5e-05a9-46c7-9884-a8e4c93befbf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Haalarit Test uuid=415d8500-7772-483b-80c3-58bdb8e029cf customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Lappeenrannan Kuljetus Oy Test uuid=d7dcdbcd-db89-4c1a-a4fd-aa54ee3ea853 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Lujatalo Oy - Pirkkalan Keskustakortteli Test uuid=030907c3-e23d-455b-b90f-956ea0412ccd customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Insecon Oy H„rm„l„ Test uuid=7cf67c20-8a76-49ac-b2b8-825cf857e34c customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Electro Center Oy Test uuid=14f6325b-729c-4f3b-b1c5-cf3ec5010e68 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=FY-Composites Oy Test uuid=803255c7-89cf-4107-a266-978c70338a8d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=ST-Koneistus Oy Test uuid=24c7b151-4182-4c29-bc1d-9aafdb742b76 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=M„nt„nvuoren Terveys Oy uuid=652a09f0-a823-4e16-9e32-9dec170da6b6 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=M„nt„nvuoren Terveys Oy - Juupakoti Test uuid=2c1ecbda-ae40-4fa6-ac40-cf63eda676d5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Punatulkun Palvelukeskus Test uuid=963ff149-236e-4072-8499-3da70da58259 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Juupajoen terveysasema Test uuid=644e37b6-f6b8-463d-b38e-0ff9802eeaa9 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Hopealinna Test uuid=770a9f01-c3cd-433f-918b-3c781bd28a27 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Juupajoen kotihoito Test uuid=421b58f5-f8ce-4a06-89a0-fb9aa844789a customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Kotihoito Etel„tie Test uuid=6fea6b9f-6168-4f46-bb40-1f49e16d35a0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Terveyskeskussairaala Test uuid=5703325e-3b76-4af8-8952-6cf9d1e32bd7 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Kotihoito Keskuskatu Test uuid=f72eb835-dc3c-4df0-b1ef-ad43e7eb34f4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Dialyysi Test uuid=08d527b3-a711-4548-ac1c-cf57bf4b2b8d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Luhtavilla Test uuid=baa0967e-7c4e-47f1-bc1c-65d001faa8f4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Sarapiha Test uuid=aef35ee7-7c96-44c5-ba6f-3589b2261d7c customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Kuusela Test uuid=65e17ec0-51b8-4325-8d6e-51e5cc697520 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Vastaanottopalvelut Test uuid=d4ea4b1a-dd67-4082-83bd-2eccd2f9f2e1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Satakieli Test uuid=62984d69-a7c3-4e2b-be16-9af29f4d9c18 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Žitiys-ja lastenneuvola Test uuid=52144ded-7ca2-4c0e-a6e4-58da1ac5693f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Suun terveydenhuolto Test uuid=aecd1175-3db8-4d97-a300-d9f115e90092 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Koulu- ja opiskelijaterveydenhuolto Test uuid=52484aa5-b9f1-499b-a614-7976a06c0f9d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Kiirevastaanotto Test uuid=e4769c9c-a5a8-45d4-83a5-feb4c2a38212 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Tupasvilla Test uuid=98b62b44-86f1-449b-93da-98f796a46a63 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Karpalo Test uuid=54f42572-a9ba-4215-9392-3788b78e9c12 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Suopursu Test uuid=15b69e81-c287-42b8-b3c7-35eab77cbd03 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Harjupeippo Test uuid=c3294dc0-eb28-46c5-afc3-830ca90f1e95 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Kangasp„„sky Test uuid=69ed12fd-1d26-46bf-b609-b97a3b1a5dc4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=M„nt„nvuoren Terveys Oy - Koskisieppo Test uuid=9ba95f98-f339-477c-9284-0736d9c6ac3d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Pihlajalinna L„„k„rikeskukset Oy Pirkanmaa Test uuid=af275e7e-d8d6-4f9a-b179-f1330ea57cd4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Pihlajalinna Akaa Test uuid=9c88d721-70ea-4605-b6ac-dc9a58309128 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Yl”j„rvi Test uuid=136675c6-e0a7-4a95-a8c6-362fc8040661 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Kangasala Test uuid=2cad2f2d-502a-406e-92fa-738ca7827eb4 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Valkeakoski Test uuid=6dd0de1d-ae20-4cb2-a564-671814ebd452 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Pirkkala Test uuid=327b1ee8-76af-48e0-a460-9cd068383345 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Kankaanp„„ Test uuid=4c87c051-5d56-44da-bdb6-c58c5a8bb444 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Parkano / Ty”terveys Test uuid=8cf760c8-ea39-41b5-9fb5-0b53fac1ddc7 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Kihni” Ty”terveys Test uuid=c5d5f20c-b1de-40cc-bc78-a4cb72dbc320 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna H„meenkyr” Test uuid=6dafe486-7259-4d1f-a757-1e7e83fd4e5e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Ikaalinen Test uuid=0d829fcb-805f-482b-8475-be24817ff1c3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Villil„ Test uuid=49e6d250-2b9b-4218-80bd-fdac0329f1d1 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Nokia Test uuid=3b1539e3-a3a3-4f3b-9591-37cba6ba924f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Hammasklinikka Test uuid=70d07e4f-1bd9-444e-b634-c0b0072ed745 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Pihlajalinna Hammaspiste Test uuid=a80f39e4-b652-4ff9-ad68-cf0d54e85b23 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+   Name=Harjun Terveys Oy Test uuid=06232c33-c3a1-448b-9131-5a37f16f5235 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   [
+    Name=Harjun Terveys Oy - Lahden sote-keskus Test uuid=96e84288-ab2d-48a9-b8fd-89efa7ffe258 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Nastolan sote-keskus Test uuid=d0b74034-c480-40a2-a89e-c4a279a15678 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Iitin sote-keskus Test uuid=c43e5846-8b5f-4f7d-9782-8e0657fa4eae customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - K„rk”l„n sote-keskus Test uuid=aedf4365-f719-49c6-bd52-d713eb957ddb customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Harjun hammashoitola Test uuid=480e3b18-2fd0-4f7c-9b7b-29e84cad06a3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjunterveys Oy - H„meenkadun hammashoitola Test uuid=38602ad7-b517-45c0-9f9d-abc83f593c25 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Jalkarannan hammashoitola Test uuid=61f14107-fc54-408f-8a2c-24170e6da1d5 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Kariston hammashoitola Test uuid=5707f298-1220-402f-8ef8-f9561dc4f2fa customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Kivimaan hammashoitola Test uuid=c955e84f-b877-4eb3-8c88-c33b3585bec3 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - K„rp„sen hammashoitola Test uuid=d8ac5142-d7a6-486d-b701-416304f325dd customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Lahden kaupunginsairaalan hammashoitola Test uuid=83c9bcc7-f8e4-4a20-a00e-9726eec3b800 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Launeen hammashoitola Test uuid=9cd7dae2-33bc-445c-a311-366f8945a09f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Liipolan hammashoitola Test uuid=fd2e401f-a3e6-4332-a63a-8c46bf2b7b4d customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Lotilan hammashoitola Test uuid=82d0e8d2-d51e-4582-80e9-958a3b288a7e customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - L„nsiharjun hammashoitola Test uuid=aa29c80f-4e20-4ed7-8d82-fa4fa6bef4e8 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Mukkulan hammashoitola Test uuid=f6b6c086-6af7-4d47-ae68-88404f7b29e0 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - M”ys„n hammashoitola Test uuid=de4e32e6-50e0-42e6-b63f-33915be29607 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Purorinteen hammashoitola Test uuid=157f8c06-6740-49a5-82e0-7228815876ee customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Sokeritopan hammashoitola Test uuid=157b10dc-67ea-4c12-a969-0344d1b7760f customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Perhekeskus Aleksanteri Test uuid=3a58b2cc-778b-4da0-afcd-981378e6dc3a customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Nastolan hammashoitola Test uuid=ad5f143e-7309-4d34-a01b-81de972efd30 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Iitin hammashoitola Test uuid=8e612c9d-53c4-481f-b7ee-ef4662165e35 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - K„rk”l„n hammashoitola Test uuid=6682fd98-0389-4f99-9c4d-3b4ffef66647 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+    Name=Harjun Terveys Oy - Lahden Sotekeskus v„linehuolto  Test uuid=12561cad-c82c-42b3-bfd2-7b04042bfa30 customer=f89653a2-73cb-484c-a7d3-31578d484fb3
+   ]
+  ]
+ ]
+]
+
+Press enter..

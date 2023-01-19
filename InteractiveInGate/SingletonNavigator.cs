@@ -7,19 +7,19 @@ namespace InteractiveInGate
     {
         private readonly Frame rootFrame;
         private readonly StartPage startPage;
-
-        // TODO
-        //private readonly ProgressPage progressPage;
-        //private readonly ItemsPage itemsPage;
-        //private readonly PingPage pingPage;
+        private readonly ProgressPage progressPage;
+        private readonly ItemsPage itemsPage;
+        private readonly PingPage pingPage;
+        private readonly MedantaReportPage medantaReportPage;
 
         public SingletonNavigator(Frame root)
         {
             rootFrame = root;
             startPage = new StartPage(this);
-            //progressPage = new ProgressPage(this);
-            //itemsPage = new ItemsPage(this);
-            //pingPage = new PingPage(this);
+            progressPage = new ProgressPage(this);
+            itemsPage = new ItemsPage(this);
+            pingPage = new PingPage(this);
+            medantaReportPage = new MedantaReportPage(this);
         }
 
         public PageView PreviousPage = PageView.Start;
@@ -30,6 +30,7 @@ namespace InteractiveInGate
             Progress,
             Items,
             Ping,
+            Medanta
         };
 
         public void Navigate(PageView target)
@@ -41,15 +42,18 @@ namespace InteractiveInGate
                 case PageView.Start:
                     rootFrame.Content = startPage;
                     break;
-            //    case PageView.Progress:
-            //        rootFrame.Content = progressPage;
-            //        break;
-            //    case PageView.Items:
-            //        rootFrame.Content = itemsPage;
-            //        break;
-            //    case PageView.Ping:
-            //        rootFrame.Content = pingPage;
-            //        break;
+                case PageView.Progress:
+                    rootFrame.Content = progressPage;
+                    break;
+                case PageView.Items:
+                    rootFrame.Content = itemsPage;
+                    break;
+                case PageView.Ping:
+                    rootFrame.Content = pingPage;
+                    break;
+                case PageView.Medanta:
+                    rootFrame.Content = medantaReportPage;
+                    break;
             }
         }
     }

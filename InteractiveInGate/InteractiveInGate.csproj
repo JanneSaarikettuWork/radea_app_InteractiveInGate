@@ -92,10 +92,38 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MedantaReportPage.xaml.cs">
+      <DependentUpon>MedantaReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PingPage.xaml.cs">
+      <DependentUpon>PingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProgressPage.xaml.cs">
+      <DependentUpon>ProgressPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
     <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MedantaReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProgressPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -168,6 +196,9 @@
   <ItemGroup>
     <PackageReference Include="IO.Swagger" Version="2.0.1" />
     <PackageReference Include="lib_Multireader" Version="1.2.0" />
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
+    </PackageReference>
     <PackageReference Include="morelinq" Version="3.1.0" />
     <PackageReference Include="NurApiDotNet" Version="1.9.13" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />

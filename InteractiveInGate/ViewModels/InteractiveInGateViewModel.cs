@@ -10,6 +10,7 @@ using Process;
 using rfid;
 using Synchronize;
 using InteractiveInGate.Utils;
+using System.Collections.ObjectModel;
 
 namespace InteractiveInGate.ViewModels
 {
@@ -86,7 +87,13 @@ namespace InteractiveInGate.ViewModels
         public BulkObservableCollection<Item> Items { get; }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        internal void Cancel()
+        // public List<string> MItems { get; } // Medanda report
+        public ObservableCollection<string> MItems { get; }
+
+
+
+
+    internal void Cancel()
         {
             if (CancellingProgress != null)
                 throw new InvalidOperationException("Can't cancel progress multiple times");
@@ -121,6 +128,11 @@ namespace InteractiveInGate.ViewModels
             selfDg = selfDiagnosticts;
 
             Items = new BulkObservableCollection<Item>();
+            // MItems= new List<string>(); // Medanta
+            // MItems = new ObservableCollection<string>(); // Medanta
+            MItems = new BulkObservableCollection<string>(); // Medanta
+
+
 
             executor = Executor.FromConfig(App.Configuration.Executor);
             process = executor.Process.First(p => p is Gate) as Gate;
@@ -168,8 +180,10 @@ namespace InteractiveInGate.ViewModels
             InventoryCount = 0;
             rfidEntryList tags = null;
             cts = new CancellationTokenSource();
+
             try
             {
+                // JSa ttr: these are in Process library
                 if (InteractiveInGate.App.Configuration.StreamInventory)
                     tags = await process.StartStreamAsync(cts.Token, (c, s) => CountUpdated(c, s), location.Uuid); // Start scan and update inventory count
                 else
@@ -193,28 +207,67 @@ namespace InteractiveInGate.ViewModels
                 NLog.LogManager.Flush();
             }
 
-            logger.Debug("Got " + tags.ItemStorage.Count + " tags from readout.");
+            logger.Debug("Got " + tags?.ItemStorage?.Count + " tags from readout.");
 
-            SkuGroupReport report = new SkuGroupReport(App.Configuration.Report.Grouping, App.Configuration.Report.Reporting) { NullSkuText = Item.UnknownText };
-            foreach (var epc in tags?.ItemStorage?.Keys?.Select(tag => tag.ToString()))
-            {
-                process.EpcToSku(epc, out Sku sku, out _);
-                report.Update(sku, epc);
-            }
-            var items = new List<Item>();
-            report.ForEach(g => items.Add(new Item(g)));
-            items.Sort();
-            Items.BeginBulkOperation();
-            Items.Clear();
-            items.ForEach(i => Items.Add(i));
-            Items.EndBulkOperation();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemsTotalCount"));
+            bool MedantaReport = true;
 
-            logger.Debug("Items after StartAsync: ");
-            foreach (Item item in Items)
+            if (MedantaReport == false)
             {
-                logger.Debug(item.Description + ": " + item.Amount);
+
+                SkuGroupReport report = new SkuGroupReport(App.Configuration.Report.Grouping, App.Configuration.Report.Reporting) { NullSkuText = Item.UnknownText };
+                foreach (var epc in tags?.ItemStorage?.Keys?.Select(tag => tag.ToString()))
+                {
+                    process.EpcToSku(epc, out Sku sku, out _);
+                    report.Update(sku, epc);
+                }
+                var items = new List<Item>();
+                report.ForEach(g => items.Add(new Item(g)));
+                items.Sort();
+                Items.BeginBulkOperation();
+                Items.Clear();
+                items.ForEach(i => Items.Add(i));
+                Items.EndBulkOperation();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemsTotalCount"));
+
+                logger.Debug("Items after StartAsync: ");
+                foreach (Item item in Items)
+                {
+                    logger.Debug(item.Description + ": " + item.Amount);
+                }
             }
+            else // MedantaReport
+            {
+                /* Tällä kikkailemalla sai toimimaan - katsotaam mitä oikeasti tarvitaan
+
+                Items.BeginBulkOperation();
+
+                MItems.Add("Eka");
+                MItems.Add("Toka");
+                MItems.Add("Kolmas");
+
+                Items.EndBulkOperation();
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("MItems"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("MItemsTotalCount"));
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemsTotalCount"));
+                */
+
+                Items.BeginBulkOperation(); // Items käyttö tässä on periaatteessa väärin, mutta sillä saa muutoseventin aikaiseksi ja prograss view loppumaan
+                Items.EndBulkOperation();
+
+                MItems.Add("Eka");
+                MItems.Add("Toka");
+                MItems.Add("Kolmas");
+
+                /* TODO: construct a report based on 
+                - tags?.ItemStorage 
+                - skuTable (lib_Process)
+                - epcSkuTable (lib_Process)
+                */
+
+            }
+
         }
     }
 }

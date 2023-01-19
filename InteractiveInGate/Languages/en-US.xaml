@@ -3,7 +3,7 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <system:String x:Key="ProgressPageTitle">Routing to target:</system:String>
+    <system:String x:Key="ProgressPageTitle">Items incoming from:</system:String>
     <system:String x:Key="Cancel">Cancel</system:String>
 
     <system:String x:Key="ItemsPageTitle">Routing report:</system:String>

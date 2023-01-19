@@ -186,7 +186,7 @@ namespace InteractiveInGate.Views
                 var name = string.Join("/", locationHierarchyNames);
 
                 LocationNode targetNode = location.GetBottomLocationNode();
-                logger.Info($"Delivery location for next scan: {targetNode.Name} ({targetNode.Uuid})");
+                logger.Info($"Delivery from location for next scan: {targetNode.Name} ({targetNode.Uuid})");
 
                 var scanTags = vm.StartAsync(targetNode, name);
                 await Task.Delay(TimeSpan.FromMilliseconds(250));
